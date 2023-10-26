@@ -71,12 +71,12 @@ class SuccessDialog extends StatelessWidget {
             alignment: Alignment.bottomRight,
             child: OutlinedButton(
               onPressed: () {
-                Navigator.of(context).pop(); // To close the dialog
+                Navigator.of(context).pop(); // Untuk menutup dialog
                 okClick!();
               },
               child: const Text("OK"),
             ),
-          )
+          ),
         ],
       ),
     );
