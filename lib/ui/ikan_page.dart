@@ -16,7 +16,7 @@ class _ProdukPageState extends State<IkanPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Ikannya Dori'),
+        title: const Text('Sirkelnya Dori'),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 20.0),

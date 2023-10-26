@@ -74,11 +74,11 @@ class _IkanDetailState extends State<IkanDetail> {
 
     void confirmHapus() {
     AlertDialog alertDialog = AlertDialog(
-      content: const Text("Yakin ingin menghapus data ini?"),
+      content: const Text("Yakin ingin menghapus ikan ini?"),
       actions: [
         // Tombol hapus
         OutlinedButton(
-          child: const Text("YA"),
+          child: const Text("Yakin"),
           onPressed: () {
             IkanBloc.deleteIkan(id: int.parse(widget.ikan!.id!)).then((value) {
               if (value) {
