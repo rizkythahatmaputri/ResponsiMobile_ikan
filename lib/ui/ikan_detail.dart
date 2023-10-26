@@ -19,25 +19,25 @@ class _IkanDetailState extends State<IkanDetail> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Detail Ikan'),
+        title: Text('Melihat Ikan'),
       ),
       body: Center(
         child: Column(
           children: [
             Text(
-              "Nama Ikan: ${widget.ikan!.namaIkan}",
+              "Nama: ${widget.ikan!.namaIkan}",
               style: TextStyle(fontSize: 20.0),
             ),
             Text(
-              "Jenis Ikan: ${widget.ikan!.jenisIkan}",
+              "Jenis: ${widget.ikan!.jenisIkan}",
               style: TextStyle(fontSize: 18.0),
             ),
             Text(
-              "Warna Ikan: ${widget.ikan!.warnaIkan}",
+              "Warna: ${widget.ikan!.warnaIkan}",
               style: TextStyle(fontSize: 18.0),
             ),
             Text(
-              "Habitat Ikan: ${widget.ikan!.habitatIkan}",
+              "Habitat: ${widget.ikan!.habitatIkan}",
               style: TextStyle(fontSize: 18.0),
             ),
             _tombolHapusEdit()
@@ -72,7 +72,7 @@ class _IkanDetailState extends State<IkanDetail> {
     );
   }
 
-  void confirmHapus() {
+    void confirmHapus() {
     AlertDialog alertDialog = AlertDialog(
       content: const Text("Yakin ingin menghapus data ini?"),
       actions: [
@@ -80,7 +80,7 @@ class _IkanDetailState extends State<IkanDetail> {
         OutlinedButton(
           child: const Text("YA"),
           onPressed: () {
-            IkanBloc.delete(widget.ikan!.id as String?).then((value) {
+            IkanBloc.delete(widget.ikan!.id).then((value) {
               if (value) {
                 Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => const IkanPage(),

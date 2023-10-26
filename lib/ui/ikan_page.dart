@@ -8,15 +8,15 @@ class IkanPage extends StatefulWidget {
   const IkanPage({Key? key}) : super(key: key);
 
   @override
-  _IkanPageState createState() => _IkanPageState();
+  _ProdukPageState createState() => _ProdukPageState();
 }
 
-class _IkanPageState extends State<IkanPage> {
+class _ProdukPageState extends State<IkanPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('List Ikan'),
+        title: const Text('Ikannya Dori'),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 20.0),
@@ -35,9 +35,7 @@ class _IkanPageState extends State<IkanPage> {
         builder: (context, snapshot) {
           if (snapshot.hasError) print(snapshot.error);
           return snapshot.hasData
-              ? ListIkan(
-                  list: snapshot.data,
-                )
+              ? ListIkan(list: snapshot.data)
               : const Center(
                   child: CircularProgressIndicator(),
                 );
@@ -57,9 +55,7 @@ class ListIkan extends StatelessWidget {
     return ListView.builder(
       itemCount: list == null ? 0 : list!.length,
       itemBuilder: (context, i) {
-        return ItemIkan(
-          ikan: list![i],
-        );
+        return ItemIkan(ikan: list![i]);
       },
     );
   }
@@ -77,16 +73,14 @@ class ItemIkan extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => IkanDetail(
-              ikan: ikan,
-            ),
+            builder: (context) => IkanDetail(ikan: ikan),
           ),
         );
       },
       child: Card(
         child: ListTile(
           title: Text(ikan.namaIkan!),
-          subtitle: Text(ikan.jenisIkan!),
+          subtitle: Text("${ikan.jenisIkan} ${ikan.warnaIkan}"),
         ),
       ),
     );
