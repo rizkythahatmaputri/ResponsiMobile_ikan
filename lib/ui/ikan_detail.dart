@@ -80,7 +80,7 @@ class _IkanDetailState extends State<IkanDetail> {
         OutlinedButton(
           child: const Text("YA"),
           onPressed: () {
-            IkanBloc.delete(widget.ikan!.id).then((value) {
+            IkanBloc.deleteIkan(id: int.parse(widget.ikan!.id!)).then((value) {
               if (value) {
                 Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => const IkanPage(),

@@ -53,5 +53,10 @@ class IkanBloc {
     return (jsonObj as Map<String, dynamic>)['data'];
   }
 
-  static delete(String? id) {}
+    static Future<dynamic> delete({int? id}) async {
+    String apiUrl = ApiUrl.deleteIkan(id!);
+    var response = await Api().delete(apiUrl);
+    var jsonObj = json.decode(response.body);
+    return (jsonObj as Map<String, dynamic>)['data'];
+  }
 }
